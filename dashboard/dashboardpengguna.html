@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Akun — Vegetale</title>
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="dasboardpengguna.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="vg-announcement">
+        Gratis pengemasan media lembap &amp; ongkir untuk pesanan di atas <strong>Rp 150.000</strong>
+    </div>
+    <!-- Navbar Bersama -->
+    <header class="vg-header">
+        <nav class="vg-container vg-navbar" aria-label="Navigasi Utama">
+            <div class="vg-nav-left">
+                <a href="../index.html" class="vg-brand" aria-label="Beranda Vegetale">
+                    <img src="../media/Vegetaleh.svg" alt="Vegetale">
+                </a>
+                <ul class="vg-nav-links" data-nav-links>
+                    <li><a href="../index.html">Beranda</a></li>
+                    <li><a href="../search/index.html">Katalog</a></li>
+                    <li><a href="../index.html#tentang">Tentang Kami</a></li>
+                    <li><a href="dashboardpengguna.html" class="active">Akun Saya</a></li>
+                </ul>
+            </div>
+
+            <div class="vg-nav-right">
+                <form action="../search/index.html" method="get" class="vg-search-form" role="search">
+                    <input type="search" name="q" placeholder="Cari monstera, bonsai, pot..." aria-label="Cari tanaman">
+                    <button type="submit" class="vg-search-submit" aria-label="Cari">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <button type="button" class="vg-icon-btn" id="nav-cart-btn" title="Keranjang Belanja" aria-label="Buka Keranjang">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="vg-cart-badge" data-cart-count>0</span>
+                </button>
+
+                <a href="../register/index.html" class="vg-icon-btn" title="Daftar / Masuk" aria-label="Halaman Daftar atau Masuk">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <button type="button" class="vg-icon-btn vg-mobile-menu-btn" data-mobile-menu-btn aria-expanded="false" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Layout Utama Dashboard -->
+    <div class="vg-container dashboard-shell">
+        <!-- Sidebar Kiri -->
+        <aside class="dash-sidebar" aria-label="Menu Akun">
+            <div class="profile-card">
+                <div class="profile-avatar" id="user-initials">FP</div>
+                <div class="profile-meta">
+                    <span class="profile-role">Anggota Ruang Hijau</span>
+                    <h2 class="profile-name" id="sidebar-user-name">Farhan Pratama</h2>
+                    <p class="profile-email" id="sidebar-user-email">farhan@vegetale.id</p>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Navigasi Dashboard">
+                <button type="button" class="nav-btn active" data-tab="overview">
+                    <span class="nav-icon"><i class="fa-solid fa-seedling"></i></span>
+                    <span>Ringkasan Akun</span>
+                </button>
+                <button type="button" class="nav-btn" data-tab="orders">
+                    <span class="nav-icon"><i class="fa-solid fa-box-open"></i></span>
+                    <span>Pesanan &amp; Pengiriman</span>
+                    <span class="nav-pill" id="nav-orders-count">1</span>
+                </button>
+                <button type="button" class="nav-btn" data-tab="address">
+                    <span class="nav-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <span>Alamat Pengiriman</span>
+                </button>
+                <button type="button" class="nav-btn" data-tab="cart">
+                    <span class="nav-icon"><i class="fa-solid fa-basket-shopping"></i></span>
+                    <span>Keranjang</span>
+                    <span class="nav-pill clay" data-cart-count>0</span>
+                </button>
+            </nav>
+
+            <button type="button" class="btn-logout" id="btn-open-logout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Keluar Akun</span>
+            </button>
+        </aside>
+
+        <!-- Area Konten Dinamis -->
+        <main class="dash-main">
+            <!-- TAB 1: RINGKASAN AKUN -->
+            <section class="tab-panel is-active" data-panel="overview">
+                <header class="content-header">
+                    <div>
+                        <span class="eyebrow-badge">
+                            <i class="fa-solid fa-leaf"></i> Ruang Hijau Personal
+                        </span>
+                        <h1 class="welcome-title">Selamat Datang, <span id="welcome-user-name">Farhan</span></h1>
+                        <p class="subtitle" id="welcome-subtitle">
+                            Kebun indoor Anda dalam kondisi optimal. Satu pesanan tanaman sedang dalam perjalanan menuju rumah Anda.
+                        </p>
+                    </div>
+                    <a href="../search/index.html" class="vg-btn vg-btn-primary">
+                        <i class="fa-solid fa-plus"></i> Jelajahi Katalog
+                    </a>
+                </header>
+
+                <!-- 3 Stat Cards -->
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon moss"><i class="fa-solid fa-seedling"></i></div>
+                            <span class="stat-trend">Aktif dirawat</span>
+                        </div>
+                        <div class="stat-number" id="stat-plants">6</div>
+                        <div class="stat-label">Tanaman Dirawat</div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon clay"><i class="fa-solid fa-truck-fast"></i></div>
+                            <span class="stat-trend warm">Dalam perjalanan</span>
+                        </div>
+                        <div class="stat-number" id="stat-active-orders">1</div>
+                        <div class="stat-label">Pesanan Berjalan</div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-top">
+                            <div class="stat-icon ochre"><i class="fa-solid fa-basket-shopping"></i></div>
+                            <span class="stat-trend">Siap checkout</span>
+                        </div>
+                        <div class="stat-number" id="stat-cart-items">3</div>
+                        <div class="stat-label">Disimpan di Keranjang</div>
+                    </article>
+                </div>
+
+                <!-- Card Pesanan Aktif -->
+                <section class="surface-card order-status-card" id="active-order-section">
+                    <div class="section-head">
+                        <div class="head-tags">
+                            <span class="tag-moss"><i class="fa-solid fa-box"></i> Pesanan Aktif</span>
+                            <span class="tag-clay" id="active-order-status">Sedang Dikirim</span>
+                        </div>
+                        <span class="order-code" id="active-order-id">#VGT-2026-0842</span>
+                    </div>
+
+                    <div class="order-detail-box">
+                        <div class="product-info">
+                            <div class="product-thumb">
+                                <img id="active-order-img" src="../media/sample1.jpeg" alt="Monstera Adansonii">
+                            </div>
+                            <div class="product-text">
+                                <span class="category-text" id="active-order-cat">Tanaman Daun · Pot 18 cm</span>
+                                <h3 id="active-order-name">Monstera Adansonii (Janda Bolong)</h3>
+                                <p id="active-order-qty">1 Item · Dikemas dengan media lembap khusus</p>
+                            </div>
+                        </div>
+                        <div class="price-info">
+                            <span class="price-label">Total Pembayaran</span>
+                            <div class="price-amount" id="active-order-price">Rp 65.000</div>
+                        </div>
+                    </div>
+
+                    <!-- Tracker Progres 4 Tahap -->
+                    <div class="progress-tracker" aria-label="Status Pengiriman">
+                        <div class="progress-track-bg">
+                            <div class="progress-track-fill" id="progress-fill" style="width: 66%;"></div>
+                        </div>
+                        <div class="tracker-steps">
+                            <div class="step-item completed">
+                                <span class="step-dot"><i class="fa-solid fa-check"></i></span>
+                                <span class="step-label">Dipesan</span>
+                            </div>
+                            <div class="step-item completed">
+                                <span class="step-dot"><i class="fa-solid fa-check"></i></span>
+                                <span class="step-label">Dikemas</span>
+                            </div>
+                            <div class="step-item active">
+                                <span class="step-dot"><i class="fa-solid fa-truck"></i></span>
+                                <span class="step-label">Dikirim</span>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-dot"><i class="fa-solid fa-house"></i></span>
+                                <span class="step-label">Tiba</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-footer-row">
+                        <span class="delivery-estimate" id="active-order-estimate">
+                            <i class="fa-regular fa-calendar"></i> Estimasi tiba 28 November 2026
+                        </span>
+                        <button type="button" class="vg-btn vg-btn-outline btn-sm" data-switch-tab="orders">
+                            Lihat Detail Pesanan
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Grid 2 Kolom: Riwayat & Alamat -->
+                <div class="bottom-grid">
+                    <!-- Riwayat Pembelian -->
+                    <section class="surface-card history-card">
+                        <div class="card-title-row">
+                            <div class="card-title-group">
+                                <span class="mini-icon"><i class="fa-solid fa-clock-rotate-left"></i></span>
+                                <h2>Riwayat Pembelian</h2>
+                            </div>
+                            <button type="button" class="link-action" data-switch-tab="orders">Lihat semua</button>
+                        </div>
+
+                        <div class="history-list" id="overview-history-list">
+                            <!-- Dirender oleh dashboardpengguna.js -->
+                        </div>
+                    </section>
+
+                    <!-- Alamat Pengiriman -->
+                    <section class="surface-card address-card">
+                        <div class="card-title-row">
+                            <div class="card-title-group">
+                                <span class="mini-icon clay"><i class="fa-solid fa-location-dot"></i></span>
+                                <h2>Alamat Pengiriman</h2>
+                            </div>
+                            <span class="addr-pill" id="addr-label-badge">Rumah Utama</span>
+                        </div>
+
+                        <div class="address-preview" id="overview-address-box">
+                            <!-- Dirender oleh dashboardpengguna.js -->
+                        </div>
+
+                        <button type="button" class="vg-btn vg-btn-outline btn-full" data-open-address-modal>
+                            <i class="fa-regular fa-pen-to-square"></i> Edit Alamat Pengiriman
+                        </button>
+                    </section>
+                </div>
+            </section>
+
+            <!-- TAB 2: PESANAN & PENGIRIMAN -->
+            <section class="tab-panel" data-panel="orders">
+                <header class="content-header">
+                    <div>
+                        <span class="eyebrow-badge"><i class="fa-solid fa-box-open"></i> Daftar Transaksi</span>
+                        <h1 class="welcome-title">Pesanan &amp; Pengiriman</h1>
+                        <p class="subtitle">Pantau seluruh pesanan tanaman yang sedang dikirim maupun yang telah selesai.</p>
+                    </div>
+                </header>
+
+                <div class="filter-pills" id="orders-filter-pills">
+                    <button type="button" class="pill-btn active" data-order-filter="all">Semua</button>
+                    <button type="button" class="pill-btn" data-order-filter="active">Berjalan</button>
+                    <button type="button" class="pill-btn" data-order-filter="done">Selesai</button>
+                </div>
+
+                <div class="orders-full-list" id="orders-full-list">
+                    <!-- Dirender oleh dashboardpengguna.js -->
+                </div>
+            </section>
+
+            <!-- TAB 3: ALAMAT PENGIRIMAN -->
+            <section class="tab-panel" data-panel="address">
+                <header class="content-header">
+                    <div>
+                        <span class="eyebrow-badge"><i class="fa-solid fa-location-dot"></i> Lokasi Penerima</span>
+                        <h1 class="welcome-title">Alamat Pengiriman</h1>
+                        <p class="subtitle">Pastikan alamat dan catatan kurir akurat agar tanaman tiba dalam kondisi segar.</p>
+                    </div>
+                    <button type="button" class="vg-btn vg-btn-primary" data-open-address-modal>
+                        <i class="fa-regular fa-pen-to-square"></i> Ubah Alamat
+                    </button>
+                </header>
+
+                <section class="surface-card address-detail-card" id="full-address-view">
+                    <!-- Dirender oleh dashboardpengguna.js -->
+                </section>
+            </section>
+
+            <!-- TAB 4: KERANJANG -->
+            <section class="tab-panel" data-panel="cart">
+                <header class="content-header">
+                    <div>
+                        <span class="eyebrow-badge"><i class="fa-solid fa-basket-shopping"></i> Pilihan Tanaman</span>
+                        <h1 class="welcome-title">Keranjang Belanja</h1>
+                        <p class="subtitle">Periksa kembali tanaman pilihan Anda sebelum melanjutkan ke pengiriman.</p>
+                    </div>
+                    <a href="../search/index.html" class="vg-btn vg-btn-outline">
+                        <i class="fa-solid fa-plus"></i> Tambah Tanaman
+                    </a>
+                </header>
+
+                <div class="cart-layout">
+                    <div class="cart-items-col" id="cart-items-list">
+                        <!-- Dirender oleh dashboardpengguna.js -->
+                    </div>
+                    <aside class="surface-card cart-summary-card" id="cart-summary-card">
+                        <h3>Ringkasan Belanja</h3>
+                        <div class="summary-row">
+                            <span>Subtotal Tanaman</span>
+                            <strong id="cart-subtotal">Rp 0</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Pengemasan Khusus Tanaman</span>
+                            <strong>Gratis</strong>
+                        </div>
+                        <div class="summary-row">
+                            <span>Ongkos Kirim</span>
+                            <strong id="cart-shipping">Rp 15.000</strong>
+                        </div>
+                        <hr class="summary-divider">
+                        <div class="summary-row total">
+                            <span>Total Bayar</span>
+                            <strong id="cart-total">Rp 0</strong>
+                        </div>
+                        <button type="button" class="vg-btn vg-btn-clay btn-full" id="btn-checkout">
+                            <i class="fa-solid fa-check"></i> Buat Pesanan Sekarang
+                        </button>
+                    </aside>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal Edit Alamat (Native HTML Dialog) -->
+    <dialog class="vg-dialog" id="address-modal" aria-labelledby="address-modal-title">
+        <form method="dialog" class="dialog-box" id="address-form">
+            <div class="dialog-header">
+                <h2 id="address-modal-title">Edit Alamat Pengiriman</h2>
+                <button type="button" class="dialog-close" data-close-dialog aria-label="Tutup">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <div class="form-row-2">
+                    <label class="form-field">
+                        <span>Label Alamat</span>
+                        <input type="text" name="label" id="input-addr-label" required placeholder="Rumah / Kantor">
+                    </label>
+                    <label class="form-field">
+                        <span>Nama Penerima</span>
+                        <input type="text" name="recipient" id="input-addr-recipient" required>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span>Nomor Telepon</span>
+                    <input type="tel" name="phone" id="input-addr-phone" required>
+                </label>
+                <label class="form-field">
+                    <span>Alamat Lengkap</span>
+                    <input type="text" name="street" id="input-addr-street" required>
+                </label>
+                <label class="form-field">
+                    <span>Kecamatan, Kota &amp; Kode Pos</span>
+                    <input type="text" name="district" id="input-addr-district" required>
+                </label>
+                <label class="form-field">
+                    <span>Catatan untuk Kurir</span>
+                    <textarea name="notes" id="input-addr-notes" rows="2" placeholder="Misal: titip di teras teduh"></textarea>
+                </label>
+            </div>
+            <div class="dialog-actions">
+                <button type="button" class="vg-btn vg-btn-outline" data-close-dialog>Batal</button>
+                <button type="submit" class="vg-btn vg-btn-primary">Simpan Alamat</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Modal Konfirmasi Keluar -->
+    <dialog class="vg-dialog vg-dialog-sm" id="logout-modal" aria-labelledby="logout-modal-title">
+        <div class="dialog-box">
+            <div class="dialog-header">
+                <h2 id="logout-modal-title">Keluar dari Akun?</h2>
+                <button type="button" class="dialog-close" data-close-dialog aria-label="Tutup">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <p class="dialog-desc">Anda akan kembali ke halaman masuk Vegetale. Keranjang dan alamat Anda tetap tersimpan di perangkat ini.</p>
+            </div>
+            <div class="dialog-actions">
+                <button type="button" class="vg-btn vg-btn-outline" data-close-dialog>Batal</button>
+                <a href="../register/index.html" class="vg-btn vg-btn-clay" id="confirm-logout-btn">Ya, Keluar</a>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- Footer Bersama -->
+    <footer class="vg-footer">
+        <div class="vg-container">
+            <div class="vg-footer-grid">
+                <div class="vg-footer-brand">
+                    <img src="../media/Vegetaleh.svg" alt="Vegetale">
+                    <p>Kurasi tanaman hias sehat langsung dari kebun rawat kami ke setiap sudut ruangan Anda.</p>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="../index.html">Beranda</a></li>
+                        <li><a href="../search/index.html">Katalog Tanaman</a></li>
+                        <li><a href="../index.html#tentang">Tentang Kami</a></li>
+                        <li><a href="dashboardpengguna.html">Dashboard Akun</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Bantuan</h4>
+                    <ul>
+                        <li><a href="../search/index.html">Panduan Perawatan</a></li>
+                        <li><a href="#active-order-section">Lacak Pengiriman</a></li>
+                        <li><a href="../register/index.html">Daftar &amp; Masuk</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><a href="mailto:halo@vegetale.id">halo@vegetale.id</a></li>
+                        <li><a href="../index.html#ulasan">Ulasan Pelanggan</a></li>
+                        <li><a href="../index.html#tentang">Malang, Jawa Timur</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vg-footer-bottom">
+                <span>&copy; 2026 Vegetale by Farhan &amp; Aryasatya. All rights reserved.</span>
+                <span>Dirancang dengan HTML, CSS &amp; JavaScript Native</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="dashboardpengguna.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetale — Tanaman Hias &amp; Ruang Hijau</title>
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="vg-announcement">
+        Gratis pengemasan media lembap &amp; ongkir untuk pesanan di atas <strong>Rp 150.000</strong> · Pengiriman aman ke seluruh Jawa
+    </div>
+
+    <!-- Header -->
+    <header class="vg-header">
+        <nav class="vg-container vg-navbar" aria-label="Navigasi Utama">
+            <div class="vg-nav-left">
+                <a href="index.html" class="vg-brand" aria-label="Beranda Vegetale">
+                    <img src="media/Vegetaleh.svg" alt="Vegetale">
+                </a>
+                <ul class="vg-nav-links" data-nav-links>
+                    <li><a href="search/index.html">Tanaman</a></li>
+                    <li><a href="search/index.html?kategori=Tanaman+Daun">Koleksi Daun</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#ulasan">Ulasan</a></li>
+                </ul>
+            </div>
+
+            <div class="vg-nav-right">
+                <form action="search/index.html" method="get" class="vg-search-form" role="search">
+                    <input type="search" name="q" placeholder="Cari tanaman hias..." aria-label="Cari tanaman">
+                    <button type="submit" class="vg-search-submit" aria-label="Cari">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <a href="dashboard/dashboardpengguna.html" class="vg-icon-btn" title="Akun Saya" aria-label="Akun Saya">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <button type="button" class="vg-icon-btn" data-open-cart title="Keranjang Belanja" aria-label="Buka Keranjang">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="vg-cart-badge" data-cart-count>0</span>
+                </button>
+
+                <button type="button" class="vg-icon-btn vg-mobile-menu-btn" data-mobile-menu-btn aria-expanded="false" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Split Editorial Hero (The Sill / Bloomscape Signature) -->
+        <section class="split-hero">
+            <div class="hero-copy-col">
+                <div class="hero-copy-inner">
+                    <span class="hero-kicker">Koleksi Musim Ini · Langsung dari Kebun</span>
+                    <h1>Hadirkan ketenangan <em>hijau</em> di setiap sudut rumah.</h1>
+                    <p>
+                        Tanaman hias sehat pilihan dengan pot tanah liat dan keramik berkualitas, dikemas khusus agar tiba segar siap menghuni ruang Anda.
+                    </p>
+                    <div class="hero-cta-row">
+                        <a href="search/index.html" class="vg-btn vg-btn-primary">Belanja Tanaman</a>
+                        <a href="search/index.html?kategori=Kaktus+%26+Sukulen" class="vg-btn vg-btn-outline">Koleksi Pemula</a>
+                    </div>
+                    <p class="hero-footnote">
+                        <span>Garansi 14 Hari Tiba Segar</span>
+                        <span>·</span>
+                        <span>Kartu Panduan Rawat Gratis</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="hero-media-col">
+                <img src="media/herobg.jpg" alt="Koleksi tanaman hias indoor Vegetale dalam pencahayaan alami">
+                <a href="search/index.html?q=Monstera" class="hero-caption-card">
+                    <span class="caption-tag">Pilihan Editor</span>
+                    <strong>Monstera Adansonii</strong>
+                    <span>Mulai Rp 65.000 <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Architectural Trust Strip -->
+        <section class="trust-strip" aria-label="Keunggulan Vegetale">
+            <div class="vg-container trust-grid">
+                <div class="trust-item">
+                    <img src="media/charm_plant-pot.svg" alt="" width="22" height="22">
+                    <div>
+                        <h3>Kurasi Akar Sehat</h3>
+                        <p>Dipilih langsung dari kebun rawat sebelum dikemas.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="media/bxs_truck.svg" alt="" width="22" height="22">
+                    <div>
+                        <h3>Kemas Media Lembap</h3>
+                        <p>Perlindungan khusus agar daun tetap utuh di perjalanan.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="media/fluent-mdl2_market.svg" alt="" width="22" height="22">
+                    <div>
+                        <h3>Pot Tanah Liat &amp; Keramik</h3>
+                        <p>Tersedia pilihan warna pot yang menyatu dengan interior.</p>
+                    </div>
+                </div>
+                <div class="trust-item">
+                    <img src="media/fluent_people-12-filled.svg" alt="" width="22" height="22">
+                    <div>
+                        <h3>Panduan Perawatan</h3>
+                        <p>Petunjuk cahaya dan jadwal siram di setiap pengiriman.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Belanja Berdasarkan Kategori (4:5 Portrait Tiles) -->
+        <section class="editorial-section">
+            <div class="vg-container">
+                <div class="section-head-row">
+                    <div>
+                        <span class="section-kicker">Belanja Berdasarkan Kategori</span>
+                        <h2 class="section-heading">Temukan Karakter Tanaman Anda</h2>
+                    </div>
+                    <a href="search/index.html" class="vg-link-underline">
+                        Lihat Semua Kategori <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="category-tiles">
+                    <a href="search/index.html?kategori=Tanaman+Daun" class="cat-tile">
+                        <img src="media/sample1.jpeg" alt="Tanaman Daun">
+                        <div class="cat-tile-overlay">
+                            <h3>Tanaman Daun</h3>
+                            <span>Lihat Koleksi <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="search/index.html?kategori=Kaktus+%26+Sukulen" class="cat-tile">
+                        <img src="media/pexels-enisahalidi-17735286.jpg" alt="Kaktus dan Sukulen">
+                        <div class="cat-tile-overlay">
+                            <h3>Kaktus &amp; Sukulen</h3>
+                            <span>Lihat Koleksi <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="search/index.html?kategori=Tanaman+Bunga" class="cat-tile">
+                        <img src="media/stocksnap-house-2606818_1920.jpg" alt="Tanaman Bunga">
+                        <div class="cat-tile-overlay">
+                            <h3>Tanaman Bunga</h3>
+                            <span>Lihat Koleksi <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <a href="search/index.html?kategori=Tanaman+Gantung" class="cat-tile">
+                        <img src="media/forest.jpg" alt="Tanaman Gantung">
+                        <div class="cat-tile-overlay">
+                            <h3>Tanaman Gantung</h3>
+                            <span>Lihat Koleksi <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Terlaris Minggu Ini (Open Gallery 4:5 Cards with Swatches & Quick-Add) -->
+        <section class="editorial-section" id="produk">
+            <div class="vg-container">
+                <div class="section-head-row">
+                    <div>
+                        <span class="section-kicker">Favorit Pelanggan</span>
+                        <h2 class="section-heading">Tanaman Terlaris</h2>
+                    </div>
+                    <a href="search/index.html" class="vg-link-underline">
+                        Jelajahi Katalog Lengkap <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="bestseller-grid" id="featured-plants-grid">
+                    <!-- Dirender oleh assets/js/home.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Split Story (Bloomscape / The Sill Brand Block) -->
+        <section class="story-split" id="tentang">
+            <div class="story-media">
+                <img src="media/gardener.jpg" alt="Perawatan tanaman di kebun Vegetale">
+            </div>
+            <div class="story-copy">
+                <div class="story-copy-inner">
+                    <span class="section-kicker">Filosofi Kebun Vegetale</span>
+                    <h2 class="section-heading">Dirawat dengan telaten sebelum menghuni ruang Anda.</h2>
+                    <p>
+                        Kami percaya setiap ruangan terasa lebih tenang saat dihuni tanaman yang sehat. Bersama petani lokal di Malang, kami menyeleksi bibit berakar kuat dan memadukannya dengan media tanam berpori agar mudah dirawat pemula sekalipun.
+                    </p>
+                    <div class="story-metrics">
+                        <div>
+                            <strong>1.400+</strong>
+                            <span>Rumah dihijaukan</span>
+                        </div>
+                        <div>
+                            <strong>4.9/5</strong>
+                            <span>Rating pelanggan</span>
+                        </div>
+                        <div>
+                            <strong>14 Hari</strong>
+                            <span>Garansi tiba segar</span>
+                        </div>
+                    </div>
+                    <div class="story-actions">
+                        <a href="search/index.html" class="vg-btn vg-btn-primary">Mulai Memilih</a>
+                        <a href="register/index.html" class="vg-link-underline">Gabung Anggota</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ulasan Pelanggan -->
+        <section class="editorial-section" id="ulasan">
+            <div class="vg-container">
+                <div class="section-head-row">
+                    <div>
+                        <span class="section-kicker">Ulasan Terverifikasi</span>
+                        <h2 class="section-heading">Cerita dari Ruang Mereka</h2>
+                    </div>
+                </div>
+
+                <div class="reviews-grid">
+                    <article class="review-card">
+                        <div class="review-stars" aria-label="5 dari 5 bintang">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            “Monstera Adansonii tiba dalam kondisi sangat segar dan pot terracottanya rapi sekali. Kartu panduan penyiramannya benar-benar membantu.”
+                        </p>
+                        <div class="review-meta">
+                            <strong>Nadia Aulia</strong>
+                            <span>Monstera Adansonii · Malang</span>
+                        </div>
+                    </article>
+
+                    <article class="review-card">
+                        <div class="review-stars" aria-label="5 dari 5 bintang">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            “Filter tingkat perawatan dan cahaya di katalog membuat saya gampang memilih tanaman untuk sudut kamar yang agak teduh.”
+                        </p>
+                        <div class="review-meta">
+                            <strong>Raka Kurniawan</strong>
+                            <span>Sansevieria Laurentii · Surabaya</span>
+                        </div>
+                    </article>
+
+                    <article class="review-card">
+                        <div class="review-stars" aria-label="5 dari 5 bintang">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">
+                            “Bonsai beringin koreanya sangat rapi untuk hadiah pindah rumah. Tracking pengiriman di dashboard akun juga sangat informatif.”
+                        </p>
+                        <div class="review-meta">
+                            <strong>Dina Safitri</strong>
+                            <span>Bonsai Beringin Korea · Bandung</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="vg-footer">
+        <div class="vg-container">
+            <div class="vg-footer-grid">
+                <div class="vg-footer-brand">
+                    <img src="media/Vegetaleh.svg" alt="Vegetale">
+                    <p>Kurasi tanaman hias sehat langsung dari kebun rawat kami untuk menghadirkan ketenangan alami di setiap ruangan.</p>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Belanja</h4>
+                    <ul>
+                        <li><a href="search/index.html">Semua Tanaman</a></li>
+                        <li><a href="search/index.html?kategori=Tanaman+Daun">Tanaman Daun</a></li>
+                        <li><a href="search/index.html?kategori=Kaktus+%26+Sukulen">Kaktus &amp; Sukulen</a></li>
+                        <li><a href="search/index.html?kategori=Tanaman+Gantung">Tanaman Gantung</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Akun</h4>
+                    <ul>
+                        <li><a href="dashboard/dashboardpengguna.html">Dashboard Akun</a></li>
+                        <li><a href="dashboard/dashboardpengguna.html#orders">Lacak Pesanan</a></li>
+                        <li><a href="dashboard/dashboardpengguna.html#cart">Keranjang Belanja</a></li>
+                        <li><a href="register/index.html">Daftar &amp; Masuk</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Vegetale</h4>
+                    <ul>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#ulasan">Ulasan Pelanggan</a></li>
+                        <li><a href="mailto:halo@vegetale.id">halo@vegetale.id</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vg-footer-bottom">
+                <span>&copy; 2026 Vegetale by Farhan &amp; Aryasatya. All rights reserved.</span>
+                <span>HTML · CSS · JavaScript Native</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/store.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar &amp; Masuk — Vegetale</title>
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <main class="auth-shell">
+        <!-- Panel Kiri (Visual & Cerita Brand) -->
+        <section class="auth-visual">
+            <div class="auth-visual-top">
+                <a href="../index.html" class="auth-brand" aria-label="Kembali ke Beranda Vegetale">
+                    <img src="../media/Vegetaleh.svg" alt="Vegetale">
+                </a>
+                <a href="../index.html" class="back-home-link">
+                    <i class="fa-solid fa-arrow-left"></i> Beranda
+                </a>
+            </div>
+
+            <div class="auth-visual-copy">
+                <span class="visual-badge">Ruang Hijau Personal</span>
+                <h1>Bawa Kesegaran Alam ke Rumah Anda</h1>
+                <p>
+                    Solusi belanja tanaman hias berkualitas secara online. Praktis, terpercaya, dan siap memperindah sudut ruangan Anda.
+                </p>
+
+                <ul class="visual-perks">
+                    <li><i class="fa-solid fa-check"></i> Pantau pengiriman tanaman secara real-time</li>
+                    <li><i class="fa-solid fa-check"></i> Simpan alamat dan koleksi tanaman favorit</li>
+                    <li><i class="fa-solid fa-check"></i> Kartu panduan perawatan di setiap pesanan</li>
+                </ul>
+            </div>
+
+            <p class="auth-visual-foot">&copy; 2026 Vegetale by Farhan &amp; Aryasatya</p>
+        </section>
+
+        <!-- Panel Kanan (Form Daftar / Masuk) -->
+        <section class="auth-panel">
+            <div class="auth-card">
+                <div class="mode-switch" role="tablist" aria-label="Pilih Mode Akun">
+                    <button type="button" class="mode-btn active" role="tab" aria-selected="true" data-mode="register">
+                        Buat Akun
+                    </button>
+                    <button type="button" class="mode-btn" role="tab" aria-selected="false" data-mode="login">
+                        Masuk
+                    </button>
+                </div>
+
+                <div class="auth-heading">
+                    <h2 id="auth-title">Buat Akun Baru</h2>
+                    <p id="auth-subtitle">Mulai perjalanan ruang hijau Anda bersama Vegetale.</p>
+                </div>
+
+                <form id="auth-form" class="auth-form" novalidate>
+                    <div class="field-group" id="group-username">
+                        <label for="reg-username">Nama Lengkap / Username</label>
+                        <div class="input-wrap">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="reg-username" name="username" placeholder="Contoh: Farhan Pratama" autocomplete="name" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="reg-email">Alamat E-mail</label>
+                        <div class="input-wrap">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="reg-email" name="email" placeholder="nama@email.com" autocomplete="email" required>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="reg-password">Kata Sandi</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="reg-password" name="password" placeholder="Minimal 6 karakter" autocomplete="new-password" required>
+                            <button type="button" class="toggle-pass" data-toggle-pass="reg-password" aria-label="Tampilkan kata sandi">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="field-group" id="group-confirm">
+                        <label for="reg-confirm">Ulangi Kata Sandi</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="reg-confirm" name="confirm_password" placeholder="Ketik ulang kata sandi" autocomplete="new-password" required>
+                            <button type="button" class="toggle-pass" data-toggle-pass="reg-confirm" aria-label="Tampilkan konfirmasi kata sandi">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="form-error" id="auth-error" role="alert" hidden></p>
+
+                    <button type="submit" class="vg-btn vg-btn-primary btn-submit" id="auth-submit-btn">
+                        Daftar Sekarang <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <p class="auth-switch-note" id="auth-switch-note">
+                    Sudah memiliki akun? <button type="button" class="inline-link" data-switch-mode="login">Masuk di sini</button>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

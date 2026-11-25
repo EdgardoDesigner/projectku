@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Tanaman — Vegetale</title>
+    <link rel="stylesheet" href="../assets/css/tokens.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="vg-announcement">
+        Gratis pengemasan media lembap &amp; ongkir untuk pesanan di atas <strong>Rp 150.000</strong>
+    </div>
+
+    <header class="vg-header">
+        <nav class="vg-container vg-navbar" aria-label="Navigasi Utama">
+            <div class="vg-nav-left">
+                <a href="../index.html" class="vg-brand" aria-label="Beranda Vegetale">
+                    <img src="../media/Vegetaleh.svg" alt="Vegetale">
+                </a>
+                <ul class="vg-nav-links" data-nav-links>
+                    <li><a href="index.html" class="active">Tanaman</a></li>
+                    <li><a href="../index.html#tentang">Tentang Kami</a></li>
+                    <li><a href="../index.html#ulasan">Ulasan</a></li>
+                    <li><a href="../dashboard/dashboardpengguna.html">Akun Saya</a></li>
+                </ul>
+            </div>
+
+            <div class="vg-nav-right">
+                <form id="catalog-search-form" class="vg-search-form" role="search">
+                    <input type="search" id="catalog-search-input" name="q" placeholder="Cari tanaman hias..." aria-label="Cari tanaman">
+                    <button type="submit" class="vg-search-submit" aria-label="Cari">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+                <a href="../dashboard/dashboardpengguna.html" class="vg-icon-btn" title="Akun Saya" aria-label="Akun Saya">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <button type="button" class="vg-icon-btn" data-open-cart title="Keranjang Belanja" aria-label="Buka Keranjang">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="vg-cart-badge" data-cart-count>0</span>
+                </button>
+
+                <button type="button" class="vg-icon-btn vg-mobile-menu-btn" data-mobile-menu-btn aria-expanded="false" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Collection Banner -->
+    <section class="collection-banner">
+        <div class="vg-container">
+            <span class="collection-kicker">Koleksi Tanaman Hias</span>
+            <h1 id="collection-title">Semua Tanaman</h1>
+            <p>Dipilih berdasarkan kesehatan akar dan kemudahan adaptasi di ruang Anda. Pilih warna pot sesuai interior rumah.</p>
+
+            <div class="category-tabs" id="category-list" role="tablist" aria-label="Kategori Tanaman">
+                <button type="button" class="cat-tab active" data-category="Semua">Semua Tanaman</button>
+                <button type="button" class="cat-tab" data-category="Tanaman Daun">Tanaman Daun</button>
+                <button type="button" class="cat-tab" data-category="Tanaman Bunga">Tanaman Bunga</button>
+                <button type="button" class="cat-tab" data-category="Kaktus & Sukulen">Kaktus &amp; Sukulen</button>
+                <button type="button" class="cat-tab" data-category="Tanaman Gantung">Tanaman Gantung</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="vg-container catalog-main">
+        <div class="catalog-toolbar">
+            <div class="toolbar-left">
+                <button type="button" class="vg-btn vg-btn-subtle mobile-filter-btn" id="toggle-filter-btn">
+                    <i class="fa-solid fa-sliders"></i> Filter
+                </button>
+                <span class="result-count" id="result-count">8 Tanaman</span>
+            </div>
+
+            <label class="sort-control">
+                <span>Urutkan</span>
+                <select id="sort-select">
+                    <option value="popular">Terpopuler</option>
+                    <option value="price-asc">Harga: Rendah ke Tinggi</option>
+                    <option value="price-desc">Harga: Tinggi ke Rendah</option>
+                    <option value="rating">Rating Tertinggi</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="catalog-layout">
+            <!-- Minimalist Hairline Filter Sidebar -->
+            <aside class="filter-sidebar" id="filter-sidebar" aria-label="Filter Produk">
+                <div class="filter-top-row">
+                    <span>Saring Produk</span>
+                    <button type="button" class="btn-reset" id="btn-reset-filter">Reset</button>
+                </div>
+
+                <details class="filter-group" open>
+                    <summary><span>Tingkat Perawatan</span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="check-list">
+                        <label><input type="checkbox" name="care" value="Easy Care"><span>Easy Care</span></label>
+                        <label><input type="checkbox" name="care" value="Medium"><span>Medium</span></label>
+                        <label><input type="checkbox" name="care" value="Advanced"><span>Advanced</span></label>
+                    </div>
+                </details>
+
+                <details class="filter-group" open>
+                    <summary><span>Kebutuhan Cahaya</span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="check-list">
+                        <label><input type="checkbox" name="light" value="Indoor"><span>Indoor</span></label>
+                        <label><input type="checkbox" name="light" value="Semi-Outdoor"><span>Semi-Outdoor</span></label>
+                        <label><input type="checkbox" name="light" value="Full Sun"><span>Full Sun</span></label>
+                    </div>
+                </details>
+
+                <details class="filter-group" open>
+                    <summary><span>Frekuensi Siram</span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="check-list">
+                        <label><input type="checkbox" name="watering" value=">7 Hari Sekali"><span>&gt;7 Hari Sekali</span></label>
+                        <label><input type="checkbox" name="watering" value="2-7 Hari Sekali"><span>2-7 Hari Sekali</span></label>
+                        <label><input type="checkbox" name="watering" value="<2 Hari Sekali"><span>&lt;2 Hari Sekali</span></label>
+                    </div>
+                </details>
+
+                <details class="filter-group">
+                    <summary><span>Ukuran Pot</span><i class="fa-solid fa-chevron-down"></i></summary>
+                    <div class="check-list">
+                        <label><input type="checkbox" name="potSize" value=">20 cm"><span>&gt;20 cm</span></label>
+                        <label><input type="checkbox" name="potSize" value="14-20 cm"><span>14-20 cm</span></label>
+                        <label><input type="checkbox" name="potSize" value="<14 cm"><span>&lt;14 cm</span></label>
+                    </div>
+                </details>
+            </aside>
+
+            <!-- 3-Column Open Gallery Grid -->
+            <section class="product-gallery" id="catalog-product-grid" aria-live="polite">
+                <!-- Dirender oleh search.js -->
+            </section>
+        </div>
+    </main>
+
+    <footer class="vg-footer">
+        <div class="vg-container">
+            <div class="vg-footer-grid">
+                <div class="vg-footer-brand">
+                    <img src="../media/Vegetaleh.svg" alt="Vegetale">
+                    <p>Kurasi tanaman hias sehat langsung dari kebun rawat kami untuk menghadirkan ketenangan alami di setiap ruangan.</p>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Belanja</h4>
+                    <ul>
+                        <li><a href="index.html">Semua Tanaman</a></li>
+                        <li><a href="index.html?kategori=Tanaman+Daun">Tanaman Daun</a></li>
+                        <li><a href="index.html?kategori=Kaktus+%26+Sukulen">Kaktus &amp; Sukulen</a></li>
+                        <li><a href="index.html?kategori=Tanaman+Gantung">Tanaman Gantung</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Akun</h4>
+                    <ul>
+                        <li><a href="../dashboard/dashboardpengguna.html">Dashboard Akun</a></li>
+                        <li><a href="../dashboard/dashboardpengguna.html#orders">Lacak Pesanan</a></li>
+                        <li><a href="../dashboard/dashboardpengguna.html#cart">Keranjang Belanja</a></li>
+                        <li><a href="../register/index.html">Daftar &amp; Masuk</a></li>
+                    </ul>
+                </div>
+                <div class="vg-footer-col">
+                    <h4>Vegetale</h4>
+                    <ul>
+                        <li><a href="../index.html#tentang">Tentang Kami</a></li>
+                        <li><a href="../index.html#ulasan">Ulasan Pelanggan</a></li>
+                        <li><a href="mailto:halo@vegetale.id">halo@vegetale.id</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="vg-footer-bottom">
+                <span>&copy; 2026 Vegetale by Farhan &amp; Aryasatya. All rights reserved.</span>
+                <span>HTML · CSS · JavaScript Native</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/store.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,849 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+/* ==========================================================================
+   VEGETALE DESIGN SYSTEM — Inspired by The Sill / Bloomscape / Patch Plants
+   Full Native CSS — Architectural Editorial Botanical E-Commerce
+   ========================================================================== */
+
+:root {
+    /* Palette: Gallery Ivory, Studio White, Deep Botanical Pine & Terracotta */
+    --bg-page: #FAF9F6;
+    --bg-white: #FFFFFF;
+    --bg-stone: #F2EFE9;
+    --bg-stone-dark: #E8E3D9;
+    --bg-sage-wash: #EDF2EE;
+    --bg-clay-wash: #F6EAE3;
+
+    /* Brand */
+    --pine-950: #11241A;
+    --pine-900: #1A3426;
+    --pine-800: #224432;
+    --pine-700: #2E5A42;
+    --pine-200: #C8D8CE;
+
+    --clay-700: #9C4B2F;
+    --clay-600: #B85D3E;
+    --clay-500: #C97152;
+
+    --ink-900: #191D1A;
+    --ink-700: #3E4540;
+    --ink-500: #666E68;
+    --ink-400: #8D948F;
+    --ink-white: #FAF9F6;
+
+    /* Borders (Architectural Hairlines) */
+    --line: #E5E0D6;
+    --line-strong: #CCC5B8;
+
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Geometry (Sharp, Architectural D2C — NOT bubbly pills) */
+    --r-none: 0px;
+    --r-xs: 2px;
+    --r-sm: 4px;
+    --r-md: 8px;
+    --r-pill: 999px;
+
+    /* Elevation (Minimalist, restrained) */
+    --shadow-subtle: 0 2px 10px rgba(17, 36, 26, 0.05);
+    --shadow-drawer: -12px 0 36px rgba(17, 36, 26, 0.14);
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --t-fast: 160ms var(--ease);
+    --t-base: 280ms var(--ease);
+
+    /* Layout */
+    --max-w: 1320px;
+    --nav-h: 72px;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--ink-900);
+    line-height: 1.55;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+
+img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--pine-800);
+    outline-offset: 2px;
+}
+
+.vg-container {
+    width: 100%;
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* ==========================================================================
+   ANNOUNCEMENT BAR (Signature D2C Plant Store Top Strip)
+   ========================================================================== */
+.vg-announcement {
+    background-color: var(--pine-900);
+    color: var(--ink-white);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding: 0.55rem 1rem;
+}
+
+.vg-announcement strong {
+    font-weight: 600;
+    color: #E7C8B7;
+}
+
+/* ==========================================================================
+   BUTTONS (Architectural Sharp-Corner D2C Style)
+   ========================================================================== */
+.vg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.82rem 1.6rem;
+    border-radius: var(--r-sm);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background-color var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+    white-space: nowrap;
+}
+
+.vg-btn-primary {
+    background-color: var(--pine-900);
+    color: var(--ink-white);
+}
+
+.vg-btn-primary:hover {
+    background-color: var(--pine-950);
+}
+
+.vg-btn-clay {
+    background-color: var(--clay-600);
+    color: var(--ink-white);
+}
+
+.vg-btn-clay:hover {
+    background-color: var(--clay-700);
+}
+
+.vg-btn-outline {
+    background-color: transparent;
+    border-color: var(--ink-900);
+    color: var(--ink-900);
+}
+
+.vg-btn-outline:hover {
+    background-color: var(--ink-900);
+    color: var(--ink-white);
+}
+
+.vg-btn-subtle {
+    background-color: var(--bg-white);
+    border-color: var(--line-strong);
+    color: var(--ink-900);
+}
+
+.vg-btn-subtle:hover {
+    border-color: var(--pine-900);
+    color: var(--pine-900);
+}
+
+.vg-link-underline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--pine-900);
+    padding-bottom: 0.2rem;
+    border-bottom: 1.5px solid var(--pine-900);
+    transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.vg-link-underline:hover {
+    color: var(--clay-600);
+    border-color: var(--clay-600);
+}
+
+/* ==========================================================================
+   HEADER / NAVBAR (Clean Gallery White + Hairline Border)
+   ========================================================================== */
+.vg-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background-color: rgba(250, 249, 246, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+}
+
+.vg-navbar {
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.vg-nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2.75rem;
+}
+
+.vg-brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.vg-brand img {
+    height: 26px;
+    width: auto;
+}
+
+.vg-nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.75rem;
+}
+
+.vg-nav-links a {
+    position: relative;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-700);
+    padding-block: 0.35rem;
+    transition: color var(--t-fast);
+}
+
+.vg-nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background-color: var(--pine-900);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--t-fast);
+}
+
+.vg-nav-links a:hover,
+.vg-nav-links a.active {
+    color: var(--pine-900);
+}
+
+.vg-nav-links a:hover::after,
+.vg-nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+.vg-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex: 1;
+    justify-content: flex-end;
+    max-width: 440px;
+}
+
+.vg-search-form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 260px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    padding: 0.2rem 0.35rem 0.2rem 0.75rem;
+    transition: border-color var(--t-fast);
+}
+
+.vg-search-form:focus-within {
+    border-color: var(--pine-900);
+}
+
+.vg-search-form input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 0.84rem;
+    color: var(--ink-900);
+    outline: none;
+}
+
+.vg-search-form input::placeholder {
+    color: var(--ink-400);
+}
+
+.vg-search-submit {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: var(--ink-700);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.vg-search-submit:hover {
+    color: var(--pine-900);
+}
+
+.vg-icon-btn {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: var(--r-sm);
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--ink-900);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color var(--t-fast), border-color var(--t-fast);
+}
+
+.vg-icon-btn:hover {
+    background-color: var(--bg-stone);
+}
+
+.vg-cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 1px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: var(--r-pill);
+    background-color: var(--pine-900);
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vg-cart-badge.is-empty {
+    display: none;
+}
+
+.vg-mobile-menu-btn {
+    display: none;
+}
+
+/* ==========================================================================
+   SHARED PRODUCT CARD (The Sill / Bloomscape Open-Gallery 4:5 Card)
+   ========================================================================== */
+.vg-product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.vg-product-media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background-color: var(--bg-stone);
+    overflow: hidden;
+    border-radius: var(--r-sm);
+}
+
+.vg-product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 520ms var(--ease);
+}
+
+.vg-product-card:hover .vg-product-media img {
+    transform: scale(1.04);
+}
+
+.vg-product-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background-color: var(--bg-white);
+    color: var(--pine-900);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.6rem;
+    border-radius: var(--r-xs);
+}
+
+.vg-quick-add {
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.7rem 1rem;
+    background-color: rgba(250, 249, 246, 0.96);
+    color: var(--pine-900);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xs);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--t-base), transform var(--t-base), background-color var(--t-fast), color var(--t-fast);
+}
+
+.vg-product-card:hover .vg-quick-add,
+.vg-quick-add:focus-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.vg-quick-add:hover {
+    background-color: var(--pine-900);
+    border-color: var(--pine-900);
+    color: var(--ink-white);
+}
+
+.vg-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.vg-swatches {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.15rem;
+}
+
+.vg-swatch {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+.vg-swatch.is-active {
+    outline: 1.5px solid var(--pine-900);
+    outline-offset: 2px;
+}
+
+.vg-product-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.vg-product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1.35;
+}
+
+.vg-product-price {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    white-space: nowrap;
+}
+
+.vg-product-meta {
+    font-size: 0.78rem;
+    color: var(--ink-500);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.vg-product-meta i {
+    color: var(--clay-600);
+    font-size: 0.72rem;
+}
+
+/* ==========================================================================
+   SLIDE-OVER MINI CART DRAWER (Real D2C Store Experience)
+   ========================================================================== */
+.vg-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    background-color: rgba(17, 36, 26, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--t-base);
+}
+
+.vg-drawer-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.vg-cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1600;
+    width: min(420px, 100vw);
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-drawer);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 320ms var(--ease);
+}
+
+.vg-cart-drawer.is-open {
+    transform: translateX(0);
+}
+
+.drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.drawer-head h2 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 600;
+}
+
+.drawer-close {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    background: transparent;
+    cursor: pointer;
+    color: var(--ink-700);
+}
+
+.drawer-close:hover {
+    background-color: var(--bg-stone);
+}
+
+.drawer-shipping-bar {
+    padding: 0.85rem 1.5rem;
+    background-color: var(--bg-stone);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-700);
+}
+
+.shipping-meter {
+    height: 4px;
+    background-color: var(--line-strong);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 0.45rem;
+}
+
+.shipping-meter-fill {
+    height: 100%;
+    background-color: var(--pine-800);
+    transition: width 300ms var(--ease);
+}
+
+.drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.drawer-item {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.drawer-item img {
+    width: 72px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: var(--r-xs);
+    background-color: var(--bg-stone);
+}
+
+.drawer-item-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.drawer-item-meta {
+    font-size: 0.78rem;
+    color: var(--ink-500);
+    margin: 0.2rem 0 0.65rem;
+}
+
+.drawer-item-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drawer-qty {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-xs);
+}
+
+.drawer-qty button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.88rem;
+}
+
+.drawer-qty span {
+    min-width: 26px;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.drawer-foot {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--line);
+    background-color: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.drawer-subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   SHARED FOOTER (Minimal Editorial Dark Pine)
+   ========================================================================== */
+.vg-footer {
+    background-color: var(--pine-950);
+    color: #CFD8D2;
+    margin-top: 5rem;
+    padding: 4.5rem 0 2.25rem;
+}
+
+.vg-footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 3.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vg-footer-brand img {
+    height: 26px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 1.1rem;
+}
+
+.vg-footer-brand p {
+    font-size: 0.88rem;
+    color: #9FB0A5;
+    max-width: 310px;
+    line-height: 1.65;
+}
+
+.vg-footer-col h4 {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FAF9F6;
+    margin-bottom: 1.1rem;
+}
+
+.vg-footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.vg-footer-col a {
+    font-size: 0.88rem;
+    color: #A7B7AD;
+    transition: color var(--t-fast);
+}
+
+.vg-footer-col a:hover {
+    color: #FFFFFF;
+}
+
+.vg-footer-bottom {
+    padding-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: #7D8E83;
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION
+   ========================================================================== */
+.vg-toast-stack {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    pointer-events: none;
+}
+
+.vg-toast {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: var(--r-sm);
+    background-color: var(--pine-950);
+    color: var(--ink-white);
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 12px 28px rgba(17, 36, 26, 0.22);
+    transform: translateY(14px);
+    opacity: 0;
+    transition: transform 240ms var(--ease), opacity 240ms var(--ease);
+    max-width: 340px;
+}
+
+.vg-toast.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.vg-toast-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--clay-500);
+    flex-shrink: 0;
+}
+
+.vg-toast.is-success .vg-toast-dot {
+    background-color: #7AD198;
+}
+
+/* ==========================================================================
+   RESPONSIVE SHARED
+   ========================================================================== */
+@media (max-width: 960px) {
+    .vg-nav-links {
+        display: none;
+    }
+
+    .vg-nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0;
+        right: 0;
+        background-color: var(--bg-white);
+        border-bottom: 1px solid var(--line);
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .vg-mobile-menu-btn {
+        display: inline-flex;
+    }
+
+    .vg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .vg-quick-add {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .vg-search-form {
+        display: none;
+    }
+
+    .vg-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

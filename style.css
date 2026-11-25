@@ -1,0 +1,421 @@
+/* ==========================================================================
+   BERANDA — Inspired by The Sill & Bloomscape (Architectural Botanical D2C)
+   ========================================================================== */
+
+/* 1. Split Editorial Hero */
+.split-hero {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    min-height: clamp(540px, 76vh, 720px);
+    background-color: var(--bg-stone);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-copy-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 4.5vw, 4.5rem);
+}
+
+.hero-copy-inner {
+    max-width: 540px;
+    width: 100%;
+}
+
+.hero-kicker {
+    display: inline-block;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay-600);
+    margin-bottom: 1.15rem;
+}
+
+.hero-copy-inner h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.65rem, 4.6vw, 4.15rem);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    color: var(--pine-950);
+    margin-bottom: 1.25rem;
+}
+
+.hero-copy-inner h1 em {
+    font-style: italic;
+    color: var(--pine-700);
+}
+
+.hero-copy-inner > p {
+    font-size: 1rem;
+    color: var(--ink-700);
+    line-height: 1.65;
+    max-width: 450px;
+    margin-bottom: 2rem;
+}
+
+.hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+}
+
+.hero-footnote {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--ink-500);
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line-strong);
+}
+
+.hero-media-col {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--pine-900);
+}
+
+.hero-media-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-caption-card {
+    position: absolute;
+    left: 1.75rem;
+    bottom: 1.75rem;
+    background-color: rgba(250, 249, 246, 0.96);
+    border: 1px solid var(--line);
+    border-radius: var(--r-xs);
+    padding: 0.95rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 215px;
+    transition: transform var(--t-fast);
+}
+
+.hero-caption-card:hover {
+    transform: translateY(-2px);
+}
+
+.caption-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--clay-600);
+}
+
+.hero-caption-card strong {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--pine-950);
+}
+
+.hero-caption-card span:last-child {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink-700);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.15rem;
+}
+
+/* 2. Architectural Trust Strip */
+.trust-strip {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--line);
+    padding: 1.85rem 0;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.75rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.trust-item img {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    opacity: 0.85;
+}
+
+.trust-item h3 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--ink-900);
+    margin-bottom: 0.15rem;
+}
+
+.trust-item p {
+    font-size: 0.8rem;
+    color: var(--ink-500);
+    line-height: 1.45;
+}
+
+/* 3. Editorial Sections Shared */
+.editorial-section {
+    padding: clamp(3.5rem, 6.5vw, 5.5rem) 0;
+}
+
+.section-head-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.25rem;
+}
+
+.section-kicker {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay-600);
+    margin-bottom: 0.45rem;
+}
+
+.section-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--pine-950);
+}
+
+/* 4. Shop by Category Portrait Tiles */
+.category-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.cat-tile {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--r-sm);
+    overflow: hidden;
+    background-color: var(--bg-stone);
+}
+
+.cat-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 560ms var(--ease);
+}
+
+.cat-tile:hover img {
+    transform: scale(1.05);
+}
+
+.cat-tile-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(17, 36, 26, 0) 45%, rgba(17, 36, 26, 0.78) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.4rem;
+    color: #FAF9F6;
+}
+
+.cat-tile-overlay h3 {
+    font-family: var(--font-serif);
+    font-size: 1.55rem;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+.cat-tile-overlay span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #E2EAE5;
+    margin-top: 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* 5. Best Sellers Open Gallery Grid */
+.bestseller-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem 1.35rem;
+}
+
+/* 6. Editorial Split Story Band */
+.story-split {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: var(--bg-stone);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.story-media {
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.story-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-copy {
+    display: flex;
+    align-items: center;
+    padding: clamp(3rem, 6vw, 5.5rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.story-copy-inner {
+    max-width: 500px;
+}
+
+.story-copy-inner > p {
+    margin-top: 1.25rem;
+    font-size: 0.98rem;
+    color: var(--ink-700);
+    line-height: 1.7;
+}
+
+.story-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin: 2rem 0 2.25rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.story-metrics strong {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--pine-950);
+    line-height: 1.1;
+}
+
+.story-metrics span {
+    font-size: 0.78rem;
+    color: var(--ink-500);
+}
+
+.story-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* 7. Reviews Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.review-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.review-stars {
+    color: var(--clay-600);
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.review-text {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    line-height: 1.45;
+    color: var(--ink-900);
+    flex: 1;
+}
+
+.review-meta {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+}
+
+.review-meta strong {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--ink-900);
+}
+
+.review-meta span {
+    font-size: 0.78rem;
+    color: var(--ink-500);
+}
+
+/* ==========================================================================
+   RESPONSIVE BERANDA
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .split-hero,
+    .story-split {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy-col {
+        justify-content: flex-start;
+    }
+
+    .hero-media-col {
+        min-height: 420px;
+    }
+
+    .trust-grid,
+    .category-tiles,
+    .bestseller-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .story-media {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 720px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 540px) {
+    .trust-grid,
+    .category-tiles,
+    .bestseller-grid {
+        grid-template-columns: 1fr;
+    }
+}
